@@ -39,4 +39,10 @@ typedef void (^ActionBlock)(UIButton *button);
  */
 - (void)upTitleDownImageAndAlignCenter;
 
+//设置UIControlStateNormal下的按钮图片
+- (void)setImage:(NSString *)strImage;
+
+//设置UIControlStateNormal下的按钮图片
+- (void)setImage:(NSString *)strImage bundle:(NSString*)strBundle;
+
 @end

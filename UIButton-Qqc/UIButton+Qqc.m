@@ -67,4 +67,21 @@ static char actionBlockKey;
     [self setImageEdgeInsets:UIEdgeInsetsMake(self.titleLabel.bounds.size.height/2, self.titleLabel.bounds.size.width/2, -self.titleLabel.bounds.size.height/2, -self.titleLabel.bounds.size.width/2)];
 }
 
+//设置UIControlStateNormal下的按钮图片
+- (void)setImage:(NSString *)strImage
+{
+    [self setImage:[UIImage imageNamed:strImage] forState:UIControlStateNormal];
+}
+
+//设置UIControlStateNormal下的按钮图片
+- (void)setImage:(NSString *)strImage bundle:(NSString*)strBundle
+{
+    NSString* strBundlePath = [[NSBundle mainBundle] pathForResource:strBundle ofType:@"bundle"];
+    NSBundle* bundle = [NSBundle bundleWithPath:strBundlePath];
+    
+    UIImage* image = [UIImage imageNamed:strImage inBundle:bundle compatibleWithTraitCollection:nil];
+    
+    [self setImage:image forState:UIControlStateNormal];
+}
+
 @end
